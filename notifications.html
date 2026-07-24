@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications | MediScript</title>
+
+<link rel="stylesheet" href="style1.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<div>
+
+<h1><i class="fas fa-bell"></i> Notifications</h1>
+
+<p>Stay updated with reminders and alerts</p>
+
+</div>
+
+<a href="dashboard.html" class="back-btn">
+
+<i class="fas fa-arrow-left"></i>
+
+Dashboard
+
+</a>
+
+</header>
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div class="stat-card">
+
+<i class="fas fa-bell"></i>
+
+<h2 id="totalNotifications">0</h2>
+
+<p>Total Notifications</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fas fa-clock"></i>
+
+<h2 id="todayNotifications">0</h2>
+
+<p>Today</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fas fa-check-circle"></i>
+
+<h2 id="readNotifications">0</h2>
+
+<p>Read</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fas fa-envelope"></i>
+
+<h2 id="unreadNotifications">0</h2>
+
+<p>Unread</p>
+
+</div>
+
+</div>
+
+<!-- Notification List -->
+
+<div class="notification-section">
+
+<div class="section-header">
+
+<h2>Recent Notifications</h2>
+
+<button id="clearAll">
+
+<i class="fas fa-trash"></i>
+
+Clear All
+
+</button>
+
+</div>
+
+<div id="notificationList">
+    <!-- Notification Card 1 -->
+
+<div class="notification-card unread">
+
+    <div class="notification-icon medicine">
+
+        <i class="fas fa-pills"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>Medicine Reminder</h3>
+
+        <p>It's time to take <strong>Paracetamol 500mg</strong>.</p>
+
+        <small>
+
+            <i class="fas fa-clock"></i>
+
+            Today • 8:00 AM
+
+        </small>
+
+    </div>
+
+    <span class="badge new">New</span>
+
+</div>
+
+<!-- Notification Card 2 -->
+
+<div class="notification-card">
+
+    <div class="notification-icon appointment">
+
+        <i class="fas fa-calendar-check"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>Upcoming Appointment</h3>
+
+        <p>
+
+            Appointment with <strong>Dr. Rajesh Kumar</strong>
+
+            tomorrow at <strong>10:30 AM</strong>.
+
+        </p>
+
+        <small>
+
+            <i class="fas fa-calendar"></i>
+
+            Tomorrow
+
+        </small>
+
+    </div>
+
+    <span class="badge upcoming">
+
+        Tomorrow
+
+    </span>
+
+</div>
+
+<!-- Notification Card 3 -->
+
+<div class="notification-card">
+
+    <div class="notification-icon ai">
+
+        <i class="fas fa-robot"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>AI Analysis Completed</h3>
+
+        <p>
+
+            Your uploaded prescription has been successfully analyzed.
+
+        </p>
+
+        <small>
+
+            <i class="fas fa-file-medical"></i>
+
+            Today • 9:45 AM
+
+        </small>
+
+    </div>
+
+    <span class="badge success">
+
+        Done
+
+    </span>
+
+</div>
+
+<!-- Notification Card 4 -->
+
+<div class="notification-card">
+
+    <div class="notification-icon system">
+
+        <i class="fas fa-shield-heart"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>Health Tip</h3>
+
+        <p>
+
+            Drink at least 8 glasses of water today to stay hydrated.
+
+        </p>
+
+        <small>
+
+            <i class="fas fa-heart"></i>
+
+            Daily Health Reminder
+
+        </small>
+
+    </div>
+
+    <span class="badge info">
+
+        Tip
+
+    </span>
+
+</div>
+<!-- Notification Card 5 -->
+
+<div class="notification-card">
+
+    <div class="notification-icon warning">
+
+        <i class="fas fa-prescription-bottle-medical"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>Prescription Refill Reminder</h3>
+
+        <p>
+
+            Your prescription for <strong>Metformin</strong> will expire in
+            <strong>3 days</strong>.
+
+        </p>
+
+        <small>
+
+            <i class="fas fa-calendar"></i>
+
+            Refill Before Expiry
+
+        </small>
+
+    </div>
+
+    <span class="badge warning">
+
+        Refill
+
+    </span>
+
+</div>
+
+<!-- Notification Card 6 -->
+
+<div class="notification-card">
+
+    <div class="notification-icon vaccine">
+
+        <i class="fas fa-syringe"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>Vaccination Reminder</h3>
+
+        <p>
+
+            Your annual <strong>Flu Vaccination</strong> is due next week.
+
+        </p>
+
+        <small>
+
+            <i class="fas fa-shield-virus"></i>
+
+            Preventive Care
+
+        </small>
+
+    </div>
+
+    <span class="badge info">
+
+        Due Soon
+
+    </span>
+
+</div>
+
+<!-- Notification Card 7 -->
+
+<div class="notification-card emergency">
+
+    <div class="notification-icon emergency-icon">
+
+        <i class="fas fa-triangle-exclamation"></i>
+
+    </div>
+
+    <div class="notification-content">
+
+        <h3>Emergency Alert</h3>
+
+        <p>
+
+            Please contact your doctor immediately if you experience severe
+            side effects after taking your medication.
+
+        </p>
+
+        <small>
+
+            <i class="fas fa-circle-exclamation"></i>
+
+            Important Health Alert
+
+        </small>
+
+    </div>
+
+    <span class="badge danger">
+
+        Urgent
+
+    </span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Notification Actions -->
+
+<div class="notification-actions">
+
+    <button id="markAllRead">
+
+        <i class="fas fa-check-double"></i>
+
+        Mark All as Read
+
+    </button>
+
+    <button id="deleteRead">
+
+        <i class="fas fa-trash"></i>
+
+        Delete Read
+
+    </button>
+
+</div>
+<!-- ================= FOOTER ================= -->
+
+<footer class="notification-footer">
+
+    <div class="footer-left">
+
+        <h3>MediScript</h3>
+
+        <p>AI-Powered Healthcare & Notification Center</p>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>Version 1.0</p>
+
+        <p>&copy; 2026 MediScript. All Rights Reserved.</p>
+
+    </div>
+
+</footer>
+
+</div>
+
+<!-- ================= LOADING SCREEN ================= -->
+
+<div id="loadingScreen" class="loading-screen" style="display:none;">
+
+    <div class="loader"></div>
+
+    <p>Loading Notifications...</p>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="notification.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const total = document.querySelectorAll(".notification-card").length;
+
+    document.getElementById("totalNotifications").textContent = total;
+
+    document.getElementById("todayNotifications").textContent = "2";
+
+    document.getElementById("readNotifications").textContent = "3";
+
+    document.getElementById("unreadNotifications").textContent = "4";
+
+});
+
+</script>
+
+</body>
+
+</html>

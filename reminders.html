@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Reminders | MediScript</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <h1>💊 MediScript</h1>
+    <p>Medicine Reminder System</p>
+
+</header>
+
+<div class="container">
+
+    <!-- Add Reminder Card -->
+    <div class="card">
+
+        <h2>Add Medicine Reminder</h2>
+
+        <label>Medicine Name</label>
+        <input type="text" id="medicineName" placeholder="Paracetamol">
+
+        <label>Dosage</label>
+        <input type="text" id="dosage" placeholder="500 mg">
+
+        <label>Reminder Time</label>
+        <input type="time" id="time">
+
+        <label>Frequency</label>
+
+        <select id="frequency">
+
+            <option>Once Daily</option>
+            <option>Twice Daily</option>
+            <option>Three Times Daily</option>
+            <option>Every 6 Hours</option>
+            <option>Weekly</option>
+
+        </select>
+
+        <label>Start Date</label>
+        <input type="date" id="startDate">
+
+        <label>End Date</label>
+        <input type="date" id="endDate">
+
+        <button id="saveReminder">
+            Save Reminder
+        </button>
+
+    </div>
+
+    <!-- Today's Reminder -->
+
+    <div class="card">
+
+        <h2>Today's Medicines</h2>
+
+        <div id="reminderList">
+
+            <p class="empty">
+                No reminders added.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="card">
+
+        <h2>Reminder Statistics</h2>
+
+        <div class="stats">
+
+            <div class="statBox">
+
+                <h3 id="totalMedicine">0</h3>
+
+                <p>Total Medicines</p>
+
+            </div>
+
+            <div class="statBox">
+
+                <h3 id="takenMedicine">0</h3>
+
+                <p>Taken Today</p>
+
+            </div>
+
+            <div class="statBox">
+
+                <h3 id="missedMedicine">0</h3>
+
+                <p>Missed</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottomNav">
+
+    <a href="dashboard.html">
+
+        <span class="material-icons">home</span>
+
+        <p>Home</p>
+
+    </a>
+
+    <a href="history.html">
+
+        <span class="material-icons">description</span>
+
+        <p>History</p>
+
+    </a>
+
+    <a href="profile.html">
+
+        <span class="material-icons">person</span>
+
+        <p>Profile</p>
+
+    </a>
+
+    <a href="settings.html">
+
+        <span class="material-icons">settings</span>
+
+        <p>Settings</p>
+
+    </a>
+
+</nav>
+
+<script type="module" src="js/reminders.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediScript Dashboard</title>
+
+<link rel="stylesheet" href="style1.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo-area">
+
+<img src="images/logo.png" class="logo">
+
+<h1>MediScript</h1>
+
+<p>AI Prescription Analyzer</p>
+
+</div>
+
+<nav class="sidebar-menu">
+
+<a href="dashboard.html" class="active">
+
+<i class="fas fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="analyzer.html">
+
+<i class="fas fa-robot"></i>
+
+<span>AI Prescription Analyzer</span>
+
+</a>
+
+<a href="upload.html">
+
+<i class="fas fa-upload"></i>
+
+<span>Upload Prescription</span>
+
+</a>
+
+<a href="view-prescription.html">
+
+<i class="fas fa-folder-open"></i>
+
+<span>My Prescriptions</span>
+
+</a>
+
+<a href="reminders.html">
+
+<i class="fas fa-pills"></i>
+
+<span>Medicine Reminder</span>
+
+</a>
+
+<a href="appointments.html">
+
+<i class="fas fa-calendar-check"></i>
+
+<span>Upcoming Checkups</span>
+
+</a>
+
+<a href="patients.html">
+
+<i class="fas fa-users"></i>
+
+<span>Patient Profiles</span>
+
+</a>
+
+<a href="history.html">
+
+<i class="fas fa-file-medical"></i>
+
+<span>Reports</span>
+
+</a>
+
+<a href="notifications.html">
+
+<i class="fas fa-bell"></i>
+
+<span>Notifications</span>
+
+</a>
+
+<a href="profile.html">
+
+<i class="fas fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fas fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+<button class="logout-btn" onclick="logout()">
+
+<i class="fas fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+<div class="language-box">
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="en">English</option>
+
+<option value="ml">മലയാളം</option>
+
+</select>
+
+</div>
+
+</nav>
+
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+<header class="top-header">
+
+<div>
+
+<h3>Welcome back,</h3>
+
+<h1 id="username">Karthika M 👋</h1>
+
+<p>Manage your health with AI-powered insights</p>
+
+</div>
+
+<div class="header-right">
+
+<button class="notification-btn">
+
+<i class="fas fa-bell"></i>
+
+</button>
+
+<div class="profile-box">
+
+<div class="avatar">
+
+K
+
+</div>
+
+<span>Karthika M</span>
+
+<i class="fas fa-chevron-down"></i>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= TOP STATISTICS ================= -->
+
+<section class="stats-grid">
+    <!-- Total Prescriptions -->
+
+<div class="stat-card">
+
+    <div class="stat-icon blue">
+
+        <i class="fas fa-file-medical"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Total Prescriptions</h4>
+
+        <h2 id="totalPrescription">12</h2>
+
+        <a href="view-prescription.html">View all</a>
+
+    </div>
+
+</div>
+
+<!-- Active Medicines -->
+
+<div class="stat-card">
+
+    <div class="stat-icon green">
+
+        <i class="fas fa-capsules"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Active Medicines</h4>
+
+        <h2 id="activeMedicine">5</h2>
+
+        <a href="reminders.html">View all</a>
+
+    </div>
+
+</div>
+
+<!-- Today's Reminders -->
+
+<div class="stat-card">
+
+    <div class="stat-icon orange">
+
+        <i class="fas fa-bell"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Reminders Today</h4>
+
+        <h2 id="todayReminder">3</h2>
+
+        <a href="reminders.html">View all</a>
+
+    </div>
+
+</div>
+
+<!-- Upcoming Checkups -->
+
+<div class="stat-card">
+
+    <div class="stat-icon purple">
+
+        <i class="fas fa-calendar-check"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Upcoming Checkups</h4>
+
+        <h2 id="checkups">2</h2>
+
+        <a href="appointments.html">View all</a>
+
+    </div>
+
+</div>
+
+<!-- Patient Profiles -->
+
+<div class="stat-card">
+
+    <div class="stat-icon red">
+
+        <i class="fas fa-users"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Patient Profiles</h4>
+
+        <h2 id="patients">4</h2>
+
+        <a href="patients.html">View all</a>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= QUICK ACCESS ================= -->
+
+<section class="quick-access">
+
+<div class="section-title">
+
+<h2>Quick Access</h2>
+
+</div>
+
+<div class="quick-grid">
+
+<!-- AI Analyzer -->
+
+<div class="quick-card"
+
+onclick="location.href='analyzer.html'">
+
+<div class="quick-icon purple">
+
+<i class="fas fa-robot"></i>
+
+</div>
+
+<div>
+
+<h3>AI Prescription Analyzer</h3>
+
+<p>Analyze prescriptions using AI</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fas fa-arrow-right"></i>
+
+</div>
+
+</div>
+
+<!-- Upload -->
+
+<div class="quick-card"
+
+onclick="location.href='upload.html'">
+
+<div class="quick-icon blue">
+
+<i class="fas fa-cloud-upload-alt"></i>
+
+</div>
+
+<div>
+
+<h3>Upload Prescription</h3>
+
+<p>Upload from camera, gallery or PDF</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fas fa-arrow-right"></i>
+
+</div>
+
+</div>
+
+<!-- My Prescriptions -->
+
+<div class="quick-card"
+
+onclick="location.href='view-prescription.html'">
+
+<div class="quick-icon green">
+
+<i class="fas fa-folder-open"></i>
+
+</div>
+
+<div>
+
+<h3>My Prescriptions</h3>
+
+<p>View and manage prescriptions</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fas fa-arrow-right"></i>
+
+</div>
+
+</div>
+
+<!-- Medicine Reminder -->
+
+<div class="quick-card"
+
+onclick="location.href='reminders.html'">
+
+<div class="quick-icon red">
+
+<i class="fas fa-bell"></i>
+
+</div>
+
+<div>
+
+<h3>Medicine Reminder</h3>
+
+<p>Never miss your medicines</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fas fa-arrow-right"></i>
+
+</div>
+
+</div>
+<!-- ================= SECOND ROW ================= -->
+
+<!-- Upcoming Checkups -->
+
+<div class="quick-card"
+onclick="location.href='appointments.html'">
+
+    <div class="quick-icon pink">
+
+        <i class="fas fa-calendar-check"></i>
+
+    </div>
+
+    <div>
+
+        <h3>Upcoming Checkups</h3>
+
+        <p>Track your upcoming appointments</p>
+
+    </div>
+
+    <div class="arrow">
+
+        <i class="fas fa-arrow-right"></i>
+
+    </div>
+
+</div>
+
+<!-- Patient Profiles -->
+
+<div class="quick-card"
+onclick="location.href='patients.html'">
+
+    <div class="quick-icon teal">
+
+        <i class="fas fa-users"></i>
+
+    </div>
+
+    <div>
+
+        <h3>Patient Profiles</h3>
+
+        <p>Manage multiple family members</p>
+
+    </div>
+
+    <div class="arrow">
+
+        <i class="fas fa-arrow-right"></i>
+
+    </div>
+
+</div>
+
+<!-- Reports -->
+
+<div class="quick-card"
+onclick="location.href='history.html'">
+
+    <div class="quick-icon blue">
+
+        <i class="fas fa-file-medical"></i>
+
+    </div>
+
+    <div>
+
+        <h3>Reports</h3>
+
+        <p>View reports and medical records</p>
+
+    </div>
+
+    <div class="arrow">
+
+        <i class="fas fa-arrow-right"></i>
+
+    </div>
+
+</div>
+
+<!-- Notifications -->
+
+<div class="quick-card"
+onclick="location.href='notifications.html'">
+
+    <div class="quick-icon purple">
+
+        <i class="fas fa-bell"></i>
+
+    </div>
+
+    <div>
+
+        <h3>Notifications</h3>
+
+        <p>Stay updated with reminders</p>
+
+    </div>
+
+    <div class="arrow">
+
+        <i class="fas fa-arrow-right"></i>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= BOTTOM SECTION ================= -->
+
+<section class="bottom-grid">
+
+<!-- Today's Reminders -->
+
+<div class="info-card">
+
+<div class="card-header">
+
+<h3>Today's Reminders</h3>
+
+<a href="reminders.html">View all</a>
+
+</div>
+
+<div class="medicine-item">
+
+<div class="medicine-icon pink">
+
+<i class="fas fa-capsule"></i>
+
+</div>
+
+<div class="medicine-details">
+
+<h4>Paracetamol 500mg</h4>
+
+<p>1 Tablet • After Food</p>
+
+</div>
+
+<div class="medicine-time">
+
+<p>08:00 AM</p>
+
+<span class="taken">Taken</span>
+
+</div>
+
+</div>
+
+<div class="medicine-item">
+
+<div class="medicine-icon blue">
+
+<i class="fas fa-capsule"></i>
+
+</div>
+
+<div class="medicine-details">
+
+<h4>Vitamin D3</h4>
+
+<p>1 Tablet • After Food</p>
+
+</div>
+
+<div class="medicine-time">
+
+<p>01:00 PM</p>
+
+<span class="pending">Pending</span>
+
+</div>
+
+</div>
+
+<div class="medicine-item">
+
+<div class="medicine-icon green">
+
+<i class="fas fa-capsule"></i>
+
+</div>
+
+<div class="medicine-details">
+
+<h4>Amoxicillin 500mg</h4>
+
+<p>1 Capsule • After Food</p>
+
+</div>
+
+<div class="medicine-time">
+
+<p>08:00 PM</p>
+
+<span class="upcoming">Upcoming</span>
+
+</div>
+
+</div>
+
+</div>
+<!-- ================= UPCOMING CHECKUPS ================= -->
+
+<div class="info-card">
+
+    <div class="card-header">
+
+        <h3>Upcoming Checkups</h3>
+
+        <a href="appointments.html">View all</a>
+
+    </div>
+
+    <div class="doctor-item">
+
+        <img src="images/doctor1.png" class="doctor-img">
+
+        <div class="doctor-details">
+
+            <h4>Dr. Rajesh Kumar</h4>
+
+            <p>General Physician</p>
+
+            <small>
+                <i class="fas fa-calendar"></i>
+                29 Jul 2026
+                &nbsp;&nbsp;
+                <i class="fas fa-clock"></i>
+                10:30 AM
+            </small>
+
+        </div>
+
+    </div>
+
+    <div class="doctor-item">
+
+        <img src="images/doctor2.png" class="doctor-img">
+
+        <div class="doctor-details">
+
+            <h4>Dr. Anjali Verma</h4>
+
+            <p>Dermatologist</p>
+
+            <small>
+                <i class="fas fa-calendar"></i>
+                05 Aug 2026
+                &nbsp;&nbsp;
+                <i class="fas fa-clock"></i>
+                11:00 AM
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= RECENT PRESCRIPTIONS ================= -->
+
+<div class="info-card">
+
+    <div class="card-header">
+
+        <h3>Recent Prescriptions</h3>
+
+        <a href="history.html">View all</a>
+
+    </div>
+
+    <div class="prescription-item">
+
+        <img src="images/prescription.png" class="prescription-img">
+
+        <div class="prescription-details">
+
+            <h4>Prescription_24_Jul.pdf</h4>
+
+            <p>Dr. Rajesh Kumar</p>
+
+            <small>
+
+                <i class="fas fa-calendar"></i>
+
+                24 Jul 2026
+
+            </small>
+
+        </div>
+
+        <span class="status analyzed">
+
+            Analyzed
+
+        </span>
+
+    </div>
+
+    <div class="prescription-item">
+
+        <img src="images/prescription.png" class="prescription-img">
+
+        <div class="prescription-details">
+
+            <h4>Prescription_18_Jul.pdf</h4>
+
+            <p>Dr. Anjali Verma</p>
+
+            <small>
+
+                <i class="fas fa-calendar"></i>
+
+                18 Jul 2026
+
+            </small>
+
+        </div>
+
+        <span class="status analyzed">
+
+            Analyzed
+
+        </span>
+
+    </div>
+
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <div class="footer-left">
+
+        <h3>MediScript</h3>
+
+        <p>
+            AI-Powered Prescription Analyzer &
+            Patient Management System
+        </p>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>
+            © 2026 MediScript
+        </p>
+
+        <p>
+            Version 1.0
+        </p>
+
+    </div>
+
+</footer>
+
+</div>
+
+<!-- END MAIN CONTENT -->
+
+</div>
+
+<!-- ================= LOADING SPINNER ================= -->
+
+<div id="loadingScreen" class="loading-screen" style="display:none;">
+
+    <div class="loader"></div>
+
+    <p>Loading MediScript...</p>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script type="module" src="dashboard.js"></script>
+
+<script src="language.js"></script>
+
+<script src="theme.js"></script>
+
+<script src="notification.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const username=localStorage.getItem("username");
+
+    if(username){
+
+        document.getElementById("username").textContent=username+" 👋";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

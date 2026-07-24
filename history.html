@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prescription History | MediScript</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>📄 MediScript</h1>
+
+    <p>Prescription History</p>
+
+</header>
+
+<div class="container">
+
+    <!-- Search -->
+
+    <div class="card">
+
+        <h2>Search Prescription</h2>
+
+        <input
+            type="text"
+            id="searchPrescription"
+            placeholder="Search by Patient, Doctor or Medicine">
+
+    </div>
+
+    <!-- Filters -->
+
+    <div class="card">
+
+        <h2>Filter & Sort</h2>
+
+        <div class="filter-grid">
+
+            <select id="filterStatus">
+
+                <option value="All">All Prescriptions</option>
+
+                <option value="Active">Active</option>
+
+                <option value="Completed">Completed</option>
+
+            </select>
+
+            <select id="sortDate">
+
+                <option value="Newest">Newest First</option>
+
+                <option value="Oldest">Oldest First</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="card">
+
+        <h2>Prescription Statistics</h2>
+
+        <div class="stats">
+
+            <div class="statBox">
+
+                <h3 id="totalPrescription">0</h3>
+
+                <p>Total</p>
+
+            </div>
+
+            <div class="statBox">
+
+                <h3 id="activePrescription">0</h3>
+
+                <p>Active</p>
+
+            </div>
+
+            <div class="statBox">
+
+                <h3 id="completedPrescription">0</h3>
+
+                <p>Completed</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Prescription List -->
+
+    <div class="card">
+
+        <h2>My Prescriptions</h2>
+
+        <div id="historyList">
+
+            <p class="empty">
+
+                No Prescription Uploaded
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottomNav">
+
+    <a href="dashboard.html">
+
+        <span class="material-icons">home</span>
+
+        <p>Home</p>
+
+    </a>
+
+    <a href="upload.html">
+
+        <span class="material-icons">upload_file</span>
+
+        <p>Upload</p>
+
+    </a>
+
+    <a href="patients.html">
+
+        <span class="material-icons">groups</span>
+
+        <p>Patients</p>
+
+    </a>
+
+    <a href="profile.html">
+
+        <span class="material-icons">person</span>
+
+        <p>Profile</p>
+
+    </a>
+
+    <a href="settings.html">
+
+        <span class="material-icons">settings</span>
+
+        <p>Settings</p>
+
+    </a>
+
+</nav>
+
+<script type="module" src="js/history.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Patient Profile | MediScript</title>
+
+<link rel="stylesheet" href="patient-profile.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Header -->
+
+<div class="profile-header">
+
+<div>
+
+<h1>👤 Patient Profile</h1>
+
+<p>View and manage patient information</p>
+
+</div>
+
+<div class="header-buttons">
+
+<button
+class="edit-btn"
+id="editPatient">
+
+✏ Edit Patient
+
+</button>
+
+<button
+class="delete-btn"
+id="deletePatient">
+
+🗑 Delete Patient
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Profile Card -->
+
+<div class="profile-card">
+
+<img
+id="profileImage"
+class="profile-photo"
+src="images/default-profile.png"
+alt="Patient Photo">
+
+<div class="profile-details">
+
+<h2 id="patientName">
+
+Loading...
+
+</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h4>Relationship</h4>
+
+<p id="relation"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Age</h4>
+
+<p id="age"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Gender</h4>
+
+<p id="gender"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Blood Group</h4>
+
+<p id="bloodGroup"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Date of Birth</h4>
+
+<p id="dob"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Height</h4>
+
+<p id="height"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Weight</h4>
+
+<p id="weight"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>BMI</h4>
+
+<p id="bmi">--</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Contact Information -->
+
+<div class="section">
+
+<h2>📞 Contact Information</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h4>Phone Number</h4>
+
+<p id="phone"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Email</h4>
+
+<p id="email"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Emergency Contact</h4>
+
+<p id="emergencyContact"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Address</h4>
+
+<p id="address"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Doctor Information -->
+
+<div class="section">
+
+<h2>🩺 Primary Doctor</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h4>Doctor Name</h4>
+
+<p id="doctor"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Hospital / Clinic</h4>
+
+<p id="hospital"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Insurance Number</h4>
+
+<p id="insurance"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Patient ID</h4>
+
+<p id="patientID"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Part 2 Starts Here -->
+ <!-- Medical Information -->
+
+<div class="section">
+
+<h2>🩺 Medical Information</h2>
+
+<div class="card-grid">
+
+<div class="small-card">
+
+<h3>⚠ Known Allergies</h3>
+
+<p id="allergies">
+
+No allergies recorded
+
+</p>
+
+</div>
+
+<div class="small-card">
+
+<h3>🧬 Chronic Diseases</h3>
+
+<p id="diseases">
+
+No chronic diseases
+
+</p>
+
+</div>
+
+<div class="small-card">
+
+<h3>📝 Medical History</h3>
+
+<p id="history">
+
+No medical history available
+
+</p>
+
+</div>
+
+<div class="small-card">
+
+<h3>🏥 Previous Surgeries</h3>
+
+<p id="surgeries">
+
+None
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Current Medicines -->
+
+<div class="section">
+
+<h2>💊 Current Medicines</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Medicine</th>
+
+<th>Dosage</th>
+
+<th>Frequency</th>
+
+<th>Duration</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="medicineTable">
+
+<tr>
+
+<td colspan="5" style="text-align:center;">
+
+No medicines added
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Emergency Details -->
+
+<div class="section">
+
+<h2>🚑 Emergency Information</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h4>Emergency Contact</h4>
+
+<p id="emergencyName"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Relationship</h4>
+
+<p id="emergencyRelation"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Phone Number</h4>
+
+<p id="emergencyPhone"></p>
+
+</div>
+
+<div class="info-box">
+
+<h4>Alternative Number</h4>
+
+<p id="alternativePhone"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Lifestyle -->
+
+<div class="section">
+
+<h2>❤️ Lifestyle & Health</h2>
+
+<div class="card-grid">
+
+<div class="small-card">
+
+<h3>Height</h3>
+
+<p id="heightCard"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Weight</h3>
+
+<p id="weightCard"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>BMI</h3>
+
+<p id="bmiCard"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Blood Pressure</h3>
+
+<p id="bp"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Blood Sugar</h3>
+
+<p id="sugar"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Heart Rate</h3>
+
+<p id="heartRate"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Notes -->
+
+<div class="section">
+
+<h2>📝 Doctor Notes</h2>
+
+<div class="small-card">
+
+<p id="notes">
+
+No notes available.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Part 3 Starts Here -->
+ <!-- Prescription History -->
+
+<div class="section">
+
+<h2>📄 Prescription History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Doctor</th>
+
+<th>Diagnosis</th>
+
+<th>Medicines</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="prescriptionTable">
+
+<tr>
+
+<td colspan="5" style="text-align:center;">
+
+No prescriptions uploaded
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Medical Reports -->
+
+<div class="section">
+
+<h2>🧪 Medical Reports</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Report</th>
+
+<th>Date</th>
+
+<th>Hospital</th>
+
+<th>Status</th>
+
+<th>Download</th>
+
+</tr>
+
+</thead>
+
+<tbody id="reportsTable">
+
+<tr>
+
+<td colspan="5" style="text-align:center;">
+
+No reports available
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Upcoming Appointments -->
+
+<div class="section">
+
+<h2>📅 Upcoming Appointments</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h4 id="appointmentDate">
+
+No Appointment Scheduled
+
+</h4>
+
+<p id="appointmentDoctor">
+
+Doctor Information
+
+</p>
+
+<p id="appointmentHospital">
+
+Hospital Information
+
+</p>
+
+<p id="appointmentReason">
+
+Reason for Visit
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Medicine Reminder History -->
+
+<div class="section">
+
+<h2>⏰ Medicine Reminder History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Medicine</th>
+
+<th>Time</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="reminderHistory">
+
+<tr>
+
+<td colspan="4" style="text-align:center;">
+
+No reminder history
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Upcoming Follow-ups -->
+
+<div class="section">
+
+<h2>🔔 Follow-up Schedule</h2>
+
+<div class="card-grid">
+
+<div class="small-card">
+
+<h3>Next Follow-up</h3>
+
+<p id="followupDate">
+
+Not Scheduled
+
+</p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Doctor</h3>
+
+<p id="followupDoctor">
+
+--
+
+</p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Hospital</h3>
+
+<p id="followupHospital">
+
+--
+
+</p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Status</h3>
+
+<p id="followupStatus">
+
+Pending
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Vaccination History -->
+
+<div class="section">
+
+<h2>💉 Vaccination History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Vaccine</th>
+
+<th>Date</th>
+
+<th>Dose</th>
+
+<th>Hospital</th>
+
+</tr>
+
+</thead>
+
+<tbody id="vaccinationTable">
+
+<tr>
+
+<td colspan="4" style="text-align:center;">
+
+No vaccination records
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Part 4 Starts Here -->
+ <!-- Health Analytics -->
+
+<div class="section">
+
+<h2>📊 Health Analytics</h2>
+
+<div class="analytics">
+
+<div class="analytics-card">
+
+<h3 id="totalPrescriptions">0</h3>
+
+<p>Total Prescriptions</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h3 id="activeMedicines">0</h3>
+
+<p>Active Medicines</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h3 id="completedMedicines">0</h3>
+
+<p>Completed Medicines</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h3 id="missedMedicines">0</h3>
+
+<p>Missed Medicines</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h3 id="upcomingAppointments">0</h3>
+
+<p>Upcoming Appointments</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h3 id="uploadedReports">0</h3>
+
+<p>Medical Reports</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- AI Health Insights -->
+
+<div class="section">
+
+<h2>🤖 AI Health Insights</h2>
+
+<div class="small-card">
+
+<p id="aiInsights">
+
+No AI analysis available yet.
+
+Upload a prescription to receive AI-powered medicine explanations, interaction warnings, dosage guidance, and health recommendations.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Health Summary -->
+
+<div class="section">
+
+<h2>❤️ Health Summary</h2>
+
+<div class="card-grid">
+
+<div class="small-card">
+
+<h3>Blood Group</h3>
+
+<p id="summaryBloodGroup"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Allergies</h3>
+
+<p id="summaryAllergies"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Primary Doctor</h3>
+
+<p id="summaryDoctor"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Hospital</h3>
+
+<p id="summaryHospital"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Emergency Contact</h3>
+
+<p id="summaryEmergency"></p>
+
+</div>
+
+<div class="small-card">
+
+<h3>Last Updated</h3>
+
+<p id="lastUpdated"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Quick Actions -->
+
+<div class="section">
+
+<h2>⚡ Quick Actions</h2>
+
+<div class="card-grid">
+
+<button class="primary-btn"
+onclick="location.href='upload.html'">
+
+📄 Upload Prescription
+
+</button>
+
+<button class="primary-btn"
+onclick="location.href='reports.html'">
+
+🧪 View Reports
+
+</button>
+
+<button class="primary-btn"
+onclick="location.href='reminders.html'">
+
+⏰ Medicine Reminders
+
+</button>
+
+<button class="primary-btn"
+onclick="location.href='appointments.html'">
+
+📅 Appointments
+
+</button>
+
+<button class="primary-btn"
+onclick="location.href='history.html'">
+
+📚 Prescription History
+
+</button>
+
+<button class="primary-btn"
+onclick="location.href='dashboard.html'">
+
+🏠 Dashboard
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer style="text-align:center;padding:30px;color:#777;">
+
+<p>
+
+© 2026 MediScript
+
+AI Prescription Analyzer & Patient Management System
+
+</p>
+
+</footer>
+
+</div>
+
+<script type="module" src="patient-profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Prescription | MediScript</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>📋 MediScript</h1>
+
+    <p>Prescription Details</p>
+
+</header>
+
+<div class="container">
+
+    <!-- Prescription Image -->
+
+    <div class="card">
+
+        <h2>Original Prescription</h2>
+
+        <img
+            id="prescriptionImage"
+            src="images/no-image.png"
+            alt="Prescription Image">
+
+    </div>
+
+    <!-- Patient Details -->
+
+    <div class="card">
+
+        <h2>Patient Information</h2>
+
+        <div class="info-grid">
+
+            <div>
+                <strong>Name</strong>
+                <p id="patientName">-</p>
+            </div>
+
+            <div>
+                <strong>Age</strong>
+                <p id="patientAge">-</p>
+            </div>
+
+            <div>
+                <strong>Gender</strong>
+                <p id="patientGender">-</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Doctor -->
+
+    <div class="card">
+
+        <h2>Doctor Details</h2>
+
+        <div class="info-grid">
+
+            <div>
+                <strong>Doctor</strong>
+                <p id="doctorName">-</p>
+            </div>
+
+            <div>
+                <strong>Hospital</strong>
+                <p id="hospitalName">-</p>
+            </div>
+
+            <div>
+                <strong>Date</strong>
+                <p id="prescriptionDate">-</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Diagnosis -->
+
+    <div class="card">
+
+        <h2>Diagnosis</h2>
+
+        <p id="diagnosis">No diagnosis available.</p>
+
+    </div>
+
+    <!-- Medicines -->
+
+    <div class="card">
+
+        <h2>Medicines</h2>
+
+        <div id="medicineList">
+
+            <p class="empty">
+
+                No Medicines Found
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- AI Analysis -->
+
+    <div class="card">
+
+        <h2>AI Prescription Analysis</h2>
+
+        <div id="aiAnalysis">
+
+            Waiting for AI Analysis...
+
+        </div>
+
+    </div>
+
+    <!-- Follow-up -->
+
+    <div class="card">
+
+        <h2>Follow-up Details</h2>
+
+        <p>
+
+            <strong>Next Visit:</strong>
+
+            <span id="followUpDate">
+
+                Not Available
+
+            </span>
+
+        </p>
+
+    </div>
+
+    <!-- Recommended Tests -->
+
+    <div class="card">
+
+        <h2>Recommended Tests</h2>
+
+        <div id="testList">
+
+            No Tests Recommended
+
+        </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+
+    <div class="card">
+
+        <div class="button-group">
+
+            <button id="downloadBtn">
+
+                <span class="material-icons">
+
+                    picture_as_pdf
+
+                </span>
+
+                Download PDF
+
+            </button>
+
+            <button id="shareBtn">
+
+                <span class="material-icons">
+
+                    share
+
+                </span>
+
+                Share
+
+            </button>
+
+            <button id="deleteBtn">
+
+                <span class="material-icons">
+
+                    delete
+
+                </span>
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottomNav">
+
+    <a href="dashboard.html">
+
+        <span class="material-icons">
+
+            home
+
+        </span>
+
+        <p>Home</p>
+
+    </a>
+
+    <a href="history.html">
+
+        <span class="material-icons">
+
+            description
+
+        </span>
+
+        <p>History</p>
+
+    </a>
+
+    <a href="patients.html">
+
+        <span class="material-icons">
+
+            groups
+
+        </span>
+
+        <p>Patients</p>
+
+    </a>
+
+    <a href="profile.html">
+
+        <span class="material-icons">
+
+            person
+
+        </span>
+
+        <p>Profile</p>
+
+    </a>
+
+    <a href="settings.html">
+
+        <span class="material-icons">
+
+            settings
+
+        </span>
+
+        <p>Settings</p>
+
+    </a>
+
+</nav>
+
+<script type="module" src="js/view-prescription.js"></script>
+
+</body>
+
+</html>

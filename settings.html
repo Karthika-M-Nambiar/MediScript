@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Settings</title>
+
+<link rel="stylesheet" href="style1.css">s
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="page-title">⚙️ MediScript Settings</h1>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h2>🌍 Appearance</h2>
+
+<label>Language</label>
+
+<select id="language">
+
+<option value="en">English</option>
+<option value="ml">Malayalam</option>
+<option value="hi">Hindi</option>
+<option value="ta">Tamil</option>
+<option value="kn">Kannada</option>
+<option value="te">Telugu</option>
+
+</select>
+
+<br><br>
+
+<label>Theme</label>
+
+<select id="theme">
+
+<option value="light">☀ Light</option>
+<option value="dark">🌙 Dark</option>
+<option value="system">💻 System</option>
+
+</select>
+
+<br><br>
+
+<button id="saveBtn">
+
+Save Settings
+
+</button>
+
+</div>
+<div class="setting-card">
+
+    <label for="language">
+
+        🌍 Language
+
+    </label>
+
+    <select id="language">
+
+        <option value="en">English</option>
+
+        <option value="ml">Malayalam</option>
+
+        <option value="hi">Hindi</option>
+
+        <option value="ta">Tamil</option>
+
+        <option value="kn">Kannada</option>
+
+        <option value="te">Telugu</option>
+
+        <option value="bn">Bengali</option>
+
+        <option value="mr">Marathi</option>
+
+    </select>
+
+</div>
+<div class="setting-card">
+
+    <label for="theme">
+
+        🎨 Theme
+
+    </label>
+
+    <select id="theme">
+
+        <option value="light">
+
+            ☀ Light
+
+        </option>
+
+        <option value="dark">
+
+            🌙 Dark
+
+        </option>
+
+        <option value="system">
+
+            💻 System Default
+
+        </option>
+
+    </select>
+
+</div>
+<div class="setting-card">
+
+<h2>🔔 Notifications</h2>
+
+<label>
+
+<input
+type="checkbox"
+id="medicineReminder">
+
+Medicine Reminder
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="appointmentReminder">
+
+Appointment Reminder
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="healthTips">
+
+Health Tips
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="emailNotification">
+
+Email Notification
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="pushNotification">
+
+Push Notification
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="notificationSound">
+
+Notification Sound
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="vibration">
+
+Vibration
+
+</label>
+
+<br><br>
+
+<button id="enableNotification">
+
+Enable Browser Notifications
+
+</button>
+
+<button id="testNotification">
+
+Test Notification
+
+</button>
+
+</div>
+<div class="setting-card">
+
+<h2>☁ Backup & Restore</h2>
+
+<button id="backupNow">
+
+Backup Now
+
+</button>
+
+<button id="restoreBackup">
+
+Restore Backup
+
+</button>
+
+<input
+
+type="file"
+
+id="backupFile"
+
+accept=".json"
+
+hidden>
+
+<p>
+
+Last Backup :
+
+<span id="lastBackup">
+
+No Backup
+
+</span>
+
+</p>
+
+</div>
+<div class="setting-card">
+
+<h2>🔒 Security</h2>
+
+<label>
+
+<input
+type="checkbox"
+id="securityEnabled">
+
+Enable App Lock
+
+</label>
+
+<br><br>
+
+<label>
+
+<input
+type="checkbox"
+id="autoLogout">
+
+Auto Logout
+
+</label>
+
+<br><br>
+
+<label>
+
+Session Timeout
+
+</label>
+
+<select id="sessionTimeout">
+
+<option value="5">5 Minutes</option>
+
+<option value="10">10 Minutes</option>
+
+<option value="15">15 Minutes</option>
+
+<option value="30">30 Minutes</option>
+
+<option value="60">1 Hour</option>
+
+</select>
+
+<br><br>
+
+<input
+type="password"
+id="pin"
+maxlength="4"
+placeholder="Enter 4 Digit PIN">
+
+<br><br>
+
+<button id="savePin">
+
+Save PIN
+
+</button>
+
+<button id="removePin">
+
+Remove PIN
+
+</button>
+
+</div>
+</div>
+</div>
+<script src="settings.js"></script>
+<script>
+const theme = localStorage.getItem("theme");
+
+if (theme === "dark") {
+    document.body.classList.add("dark");
+}
+</script>
+<script src="translate.js"></script>
+<script type="module" src="js/settings/language.js"></script>
+<script type="module" src="js/settings/theme.js"></script>
+<script type="module" src="js/settings/notification.js"></script>
+<script type="module" src="js/settings/backup.js"></script>
+<script type="module" src="js/settings/security.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+<link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>👤 My Profile</h1>
+
+<img id="profilePic"
+src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+width="120">
+
+<h2 id="username">Loading...</h2>
+
+<p id="email"></p>
+
+<button id="editBtn">Edit Profile</button>
+
+<button onclick="location.href='settings.html'">
+⚙ Settings
+</button>
+
+<button id="logoutBtn">
+Logout
+</button>
+
+</div>
+<a href="patient-profile.html">
+
+<button>
+
+➕ Add New Patient
+
+</button>
+
+</a>
+
+<script type="module" src="profile.js"></script>
+<script>
+const theme = localStorage.getItem("theme");
+
+if (theme === "dark") {
+    document.body.classList.add("dark");
+}
+</script>
+<script src="translate.js"></script>
+</body>
+</html>
