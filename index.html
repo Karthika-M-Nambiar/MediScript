@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediScript</title>
+
+<link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body class="splash">
+
+<div class="splash-container">
+
+<img src="images/logo.png" class="logo">
+
+<h1>MediScript</h1>
+
+<p>AI Prescription Assistant</p>
+
+<div class="loader"></div>
+
+</div>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+onAuthStateChanged(auth,(user)=>{
+
+setTimeout(()=>{
+
+if(user){
+
+window.location="dashboard.html";
+
+}else{
+
+window.location="login.html";
+
+}
+
+},2500);
+
+});
+
+</script>
+
+</body>
+</html>
