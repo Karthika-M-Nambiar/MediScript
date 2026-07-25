@@ -5976,3 +5976,16 @@ body.dark h3{
 /* ===========================================
    END OF NOTIFICATION CSS
 =========================================== */
+.prescription-container{
+
+    width:90%;
+    max-width:1000px;
+
+    margin:30px auto;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+
+}
